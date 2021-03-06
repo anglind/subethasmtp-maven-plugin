@@ -10,10 +10,17 @@
 
     <name>SubEthaSMTP Maven Plugin</name>
     <description>A plugin wrapper around the SubEthaSMTP server for use with integration tests</description>
+    <url>https://github.com/anglind/subethasmtp-maven-plugin</url>
+    <inceptionYear>2021</inceptionYear>
 
     <prerequisites>
         <maven>${maven.version}</maven>
     </prerequisites>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/anglind/subethasmtp-maven-plugin/issues</url>
+    </issueManagement>
 
     <licenses>
         <license>
@@ -22,6 +29,17 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <organization>
+        <name>None</name>
+        <url>https://github.com/anglind/subethasmtp-maven-plugin</url>
+    </organization>
+
+    <scm>
+        <connection>scm:git:https://github.com/anglind/subethasmtp-maven-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/anglind/subethasmtp-maven-plugin.git</developerConnection>
+        <url>https://github.com/anglind/subethasmtp-maven-plugin</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -122,30 +140,6 @@
             </plugins>
         </pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>com.github.anglind</groupId>
-                <artifactId>subethasmtp-maven-plugin</artifactId>
-                <version>1.0-SNAPSHOT</version>
-                <configuration>
-                    <port>5050</port>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>start-server</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>start-server</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>stop-server</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>stop-server</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
